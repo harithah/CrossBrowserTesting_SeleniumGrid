@@ -13,6 +13,7 @@ By default it created the grid in 4444 port.
 Go to localhost:4444 to view the selenium grid console
 
 Now to register 2 nodes do the below:
+
 java -jar selenium-server-standalone-2.44.0.jar -role webdriver  -hub http://localhost:4444/grid/register -port 5556
 
 java -jar selenium-server-standalone-2.44.0.jar -role webdriver  -hub http://localhost:4433/grid/register -port 5555
