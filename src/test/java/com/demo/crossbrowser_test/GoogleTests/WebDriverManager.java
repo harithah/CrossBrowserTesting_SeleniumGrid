@@ -17,11 +17,15 @@ public class WebDriverManager {
     public static WebDriver startDriver(String type) throws MalformedURLException {
         WebDriver d;
         if (type.equals("chrome")) {
-            DesiredCapabilities desiredCapabilities = DesiredCapabilities.chrome();
-            d = new RemoteWebDriver(new URL("http://localhost:5556/wb/hub"),desiredCapabilities);
+            DesiredCapabilities desiredCapabilities=DesiredCapabilities.chrome();
+            desiredCapabilities.setCapability("version","");
+            desiredCapabilities.setCapability("platform","LINUX");
+            d = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),desiredCapabilities);
         } else if (type.equals("firefox")) {
             DesiredCapabilities desiredCapabilitiesff = DesiredCapabilities.firefox();
-            d = new RemoteWebDriver(new URL("http://localhost:5555/wb/hub"),desiredCapabilitiesff   );
+            desiredCapabilitiesff.setCapability("version","");
+            desiredCapabilitiesff.setCapability("platform","LINUX");
+            d = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),desiredCapabilitiesff   );
         } else {
             throw new IllegalArgumentException("Browser type not supported: " + type);
         }
