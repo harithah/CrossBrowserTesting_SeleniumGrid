@@ -21,3 +21,10 @@ java -jar selenium-server-standalone-2.44.0.jar -role webdriver  -hub http://loc
 The Selenium grid console will now show 2 nodes registered in the above mentioned ports.
 
 There ports are used while initialising the RemoteWebDrivers in our test code.
+
+
+To run tests:
+
+mvn clean test -P firefox
+
+mvn clean test -P chrome
